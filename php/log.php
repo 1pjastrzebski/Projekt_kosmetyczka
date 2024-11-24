@@ -1,5 +1,5 @@
 <?php
-    session_start()
+    session_start();
     require_once "../components/connect.php";
     $conn = new mysqli($host,$username,$password,$database);
     if($conn->connect_error){
@@ -21,15 +21,15 @@
                         header("Location: ../index.php");
                     }else{
                         $_SESSION['log_err'] = "Nieprawidłowe hasło";
-                        header("Location: ../logowanie.php");
+                        header("Location: ../log-form.php");
                     }
                 }else{
                     $_SESSION["log_err"] = "Nieprawidłowy email";
-                    header("Location: ../logowanie.php");
+                    header("Location: ../log-form.php");
                 }
             }
         }else{
-            header("Location: ../logowanie.php");
+            header("Location: ../log-form.php");
         }
         $conn->close();
     }
