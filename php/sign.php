@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 require_once "../components/connect.php";
 
 
@@ -17,7 +15,6 @@ if ($conn->connect_error) {
         $email = $_POST["email"];
         $haslo = $_POST["haslo"];
         $phaslo = $_POST["phaslo"];
-        $tel = $_POST["tel"];
         $hHaslo = password_hash($haslo, PASSWORD_DEFAULT);
         $sql = "SELECT email FROM klienci WHERE email='$email'";
         if ($kwerenda = $conn->query($sql)) {
@@ -30,7 +27,7 @@ if ($conn->connect_error) {
         } else {
             header("Location: ../sign-form.php");
         }
-        $sql = "INSERT into klienci VALUES(null,'$imie','$nazwisko','$email','$hHaslo','$tel',CURRENT_DATE())";
+        $sql = "INSERT into klienci VALUES(null,'$imie','$nazwisko','$email','$hHaslo',CURRENT_DATE())";
         if ($kwerenda = $conn->query($sql)) {
             $_SESSION['rejestracja'] = true;
             header("Location: ../index.php");
@@ -40,3 +37,4 @@ if ($conn->connect_error) {
     }
 }
 $conn->close();
+?>
