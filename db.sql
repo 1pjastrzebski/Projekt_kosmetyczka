@@ -17,8 +17,7 @@ create table klienci
 	id_klienta int not null AUTO_INCREMENT PRIMARY KEY,
     imie char(30) not null,
     nazwisko varchar(50) not null,
+    email varchar(50) not null,
   	plec ENUM("K","M"),
-    wiek int(3) not null,
-    miasto varchar(50) not null,
-    ulica varchar(50) not null
+    haslo varchar(300)
 );
