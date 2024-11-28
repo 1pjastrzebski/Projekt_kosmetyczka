@@ -10,6 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/style.css">
     <style>
       .line {
         border-color: #ed01c1 !important;
@@ -48,7 +49,11 @@
             </li>
             <li class="align-items-center m-3">
               <h2>
+                <%if(loggedin != true) { %>
                 <a class="text-white" aria-current="page" href="/log-form">Zaloguj</a>
+                <% } else { %>
+                <form action="/logout" method="post"><button type="submit" class="bg-dark sub text-white">Wyloguj</button></form>
+                <% } %>
               </h2>
             </li>
           </ul>
