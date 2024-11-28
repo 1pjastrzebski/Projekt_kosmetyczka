@@ -1,0 +1,35 @@
+body {
+    height: 55vh;
+}
+
+main {
+    padding: 5px 50px 30px 50px;
+    border: 2px solid black;
+}
+
+.form-body {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.fdiv {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.form-floating {
+    margin: 10px 2px;
+}
+.form-error-text{
+    color: tomato;
+}
+
+.butn{
+    width: 100%;
+    background-color: #ED01C1;
+}
+.line{
+    border-color: #ED01C1;
+}
